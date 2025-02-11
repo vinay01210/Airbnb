@@ -1,0 +1,36 @@
+<% layout ("/layouts/boilerplate") %>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Signup Page</title>
+    </head>
+    <body>
+
+        <div class="row mt-3">
+            <div class="col-6 offset-3">
+                <h1>Sign up wonderlust </h1>
+                <form method="Post" action="/signup" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="username" class="form-lable">Username</label>
+                    <input type="username" name="username" class="form-control" required>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-lable">Email</label>
+                    <input type="email" name ="email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-lable">Password</label>
+                    <input type="Password" name ="password" class="form-control" required>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <Button class="btn btn-success">Sign up</Button>
+            </form>
+            </div>
+        </div>
+
+    </body>
+
+    </html>
