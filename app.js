@@ -7,6 +7,7 @@ const app = express();
 const port = 8080;
 
 const Listing = require("./models/listing");
+const User = require("./models/user.js");
 const path = require("path");
 const ejsMate = require('ejs-mate');
 const methodOverride = require("method-override");
@@ -22,7 +23,7 @@ const flash = require("connect-flash");
 const { date } = require("joi");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
-const User = require("./models/user.js");
+
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -31,7 +32,6 @@ app.use(methodOverride("_method"));
 app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
-// const Mongo_URL = "mongodb://127.0.0.1:27017/wonderlust"
 const DbUrl = process.env.ATLASDB_URL;
 main().then((res) => {
     console.log("DB is connected");
@@ -65,12 +65,6 @@ const sessionOptions = {
         httpOnly: true,
     },
 };
-
-// app.get("/", (req, res) => {
-//     res.send("Hii iam Groth");
-// });
-
-
 
 app.use(session(sessionOptions));
 app.use(flash());
